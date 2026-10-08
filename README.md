@@ -13,7 +13,8 @@ Implementação do desafio frontend da Jungle Gaming, construída com React, Vit
 Os relatórios individuais em `lighthouse-reports` são versionados
 intencionalmente. O desafio exige três medições da home e do detalhe do NFT em
 mobile e desktop, entregues em HTML e JSON. `playwright-report`, `test-results`
-e `dist`, por outro lado, são artefatos locais e permanecem no `.gitignore`.
+e `dist` são artefatos gerados e permanecem no `.gitignore`; o CI disponibiliza
+os relatórios e traces do Playwright como artifacts de cada execução.
 
 ## Pré-requisitos
 
@@ -60,6 +61,13 @@ npx playwright install chromium
 ```
 
 O comando `npm run test:e2e` gera o relatório em `playwright-report` e mantém traces das falhas em `test-results`.
+
+O workflow [`Quality`](.github/workflows/quality.yml) repete a validação em um
+checkout limpo a cada push ou pull request para `main`. Na página da execução
+do GitHub Actions, o artifact `playwright-report` contém o relatório HTML; se
+houver falha, `playwright-failure-artifacts` preserva traces, screenshots e
+demais evidências por 30 dias. Esses arquivos não são versionados porque são
+resultados reproduzíveis da execução.
 
 Para validar uma entrega a partir de um checkout limpo:
 

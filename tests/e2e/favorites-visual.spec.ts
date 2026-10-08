@@ -3,6 +3,7 @@ import { expect, test, type BrowserContext, type Page } from "@playwright/test"
 import { expectNoHorizontalOverflow } from "./support/cart.js"
 import { waitForMockService } from "./support/mock-readiness.js"
 import { setMockScenario } from "./support/mock-scenario.js"
+import { waitForVisualReadiness } from "./support/visual-readiness.js"
 
 const credentials = {
   email: "luna.rocha@kurio.test",
@@ -41,17 +42,7 @@ async function openFavorites(
   await expect(
     page.getByRole("heading", { name: "Lista de interesse" }),
   ).toBeVisible()
-  await page.evaluate(
-    `(async () => {
-      await document.fonts.ready
-      await Promise.all(Array.from(document.images, (image) => image.decode()))
-      window.scrollTo(0, 0)
-      await new Promise((resolve) => {
-        requestAnimationFrame(() => requestAnimationFrame(resolve))
-      })
-    })()`,
-  )
-  await page.mouse.move(0, 0)
+  await waitForVisualReadiness(page)
 }
 
 test.describe("regressão visual dos favoritos", () => {

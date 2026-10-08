@@ -1,6 +1,7 @@
 import { expect, test, type Page } from "@playwright/test"
 
 import { setMockScenario } from "./support/mock-scenario.js"
+import { waitForVisualReadiness } from "./support/visual-readiness.js"
 
 const DETAIL_PATH = "/nfts/genesis-circuit-014"
 
@@ -11,17 +12,7 @@ async function waitForDetail(page: Page) {
   await expect(
     page.getByRole("button", { name: /^(COMPRAR|Comprar NFT)$/ }),
   ).toBeEnabled()
-  await page.evaluate(
-    `(async () => {
-      await document.fonts.ready
-      await Promise.all(Array.from(document.images, (image) => image.decode()))
-      window.scrollTo(0, 0)
-      await new Promise((resolve) => {
-        requestAnimationFrame(() => requestAnimationFrame(resolve))
-      })
-    })()`,
-  )
-  await page.mouse.move(0, 0)
+  await waitForVisualReadiness(page)
 }
 
 test.describe("regressão visual do detalhe do NFT", () => {

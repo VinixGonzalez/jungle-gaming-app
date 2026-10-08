@@ -7,6 +7,7 @@ import {
 } from "./support/cart.js"
 import { waitForMockService } from "./support/mock-readiness.js"
 import { setMockScenario } from "./support/mock-scenario.js"
+import { waitForVisualReadiness } from "./support/visual-readiness.js"
 
 const credentials = {
   email: "luna.rocha@kurio.test",
@@ -26,20 +27,6 @@ async function loginThroughApi(page: Page) {
   }, credentials)
 
   expect(response.status, response.body).toBe(200)
-}
-
-async function settleVisualState(page: Page) {
-  await page.evaluate(
-    `(async () => {
-      await document.fonts.ready
-      await Promise.all(Array.from(document.images, (image) => image.decode()))
-      window.scrollTo(0, 0)
-      await new Promise((resolve) => {
-        requestAnimationFrame(() => requestAnimationFrame(resolve))
-      })
-    })()`,
-  )
-  await page.mouse.move(0, 0)
 }
 
 async function openCheckout(
@@ -64,7 +51,7 @@ async function openCheckout(
     page.locator("[aria-labelledby='checkout-summary-title']"),
   ).toHaveAttribute("aria-busy", "false")
   await expect(page.getByText("0,955 ETH").first()).toBeVisible()
-  await settleVisualState(page)
+  await waitForVisualReadiness(page)
 }
 
 async function confirmOrder(page: Page) {
@@ -86,7 +73,7 @@ async function confirmOrder(page: Page) {
 
   await expect(receipt).toBeVisible()
   await expect(receipt.getByText("Genesis Circuit #014")).toBeVisible()
-  await settleVisualState(page)
+  await waitForVisualReadiness(page)
 
   return {
     confirmedAt: receipt.locator("dl").first().locator("dd").nth(1),

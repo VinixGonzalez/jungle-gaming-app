@@ -1,6 +1,7 @@
 import { expect, test, type Page } from "@playwright/test"
 
 import { setMockScenario } from "./support/mock-scenario.js"
+import { waitForVisualReadiness } from "./support/visual-readiness.js"
 
 async function prepareAuthScreenshot(
   page: Page,
@@ -10,17 +11,7 @@ async function prepareAuthScreenshot(
 
   await page.goto(path)
   await expect(page.getByRole("dialog", { name: title })).toBeVisible()
-  await page.evaluate(
-    `(async () => {
-      await document.fonts.ready
-      await Promise.all(Array.from(document.images, (image) => image.decode()))
-      window.scrollTo(0, 0)
-      await new Promise((resolve) => {
-        requestAnimationFrame(() => requestAnimationFrame(resolve))
-      })
-    })()`,
-  )
-  await page.mouse.move(0, 0)
+  await waitForVisualReadiness(page)
 }
 
 test.describe("regressão visual da autenticação", () => {
