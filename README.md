@@ -2,6 +2,8 @@
 
 Implementação do desafio frontend da Jungle Gaming, construída com React, Vite e TypeScript a partir da especificação visual oficial.
 
+**Aplicação publicada:** [jungle-gaming-app.vercel.app](https://jungle-gaming-app.vercel.app/)
+
 ## Documentação da entrega
 
 - [Decisões de arquitetura, UX, limitações e desvios do Figma](ARCHITECTURE.md)
