@@ -1,0 +1,102 @@
+:root {
+  color-scheme: dark;
+
+  /* Core design-system primitives. */
+  --jungle-font-family: "Roboto Mono Variable", ui-monospace, SFMono-Regular,
+    Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --jungle-color-primary: #d28a4c;
+  --jungle-color-primary-light: #dd9a5f;
+  --jungle-color-primary-dark: #c47b3e;
+  --jungle-color-amber: #e3a44e;
+  --jungle-color-text-coral: #f0805f;
+  --jungle-color-foreground: #f5f1eb;
+  --jungle-color-background-elevated: #fbfbfb;
+  --jungle-color-white: #ffffff;
+  --jungle-color-black: #000000;
+  --jungle-color-secondary: #b39463;
+  --jungle-color-text-muted: #b0916a;
+  --jungle-color-surface-card: #241612;
+  --jungle-color-surface-raised: #2f1d15;
+  --jungle-color-ink: #140d0a;
+  --jungle-color-ink-deep: #0e0907;
+  --jungle-color-ink-soft: #1c110c;
+  --jungle-color-surface-dark: #38220f;
+  --jungle-color-border: #3f2319;
+  --jungle-color-border-soft: #55321f;
+  --jungle-color-gray-light: #ededed;
+  --jungle-color-success: #00a66c;
+  --jungle-color-error: #ed1b2e;
+  --jungle-color-error-text: #ff6b73;
+  --jungle-color-text-primary: #f7f3ec;
+  --jungle-color-text-secondary: #cfb28c;
+  --jungle-color-text-accent: #e89b55;
+
+  /* Brand colors used by social and payment assets. */
+  --jungle-color-logo-orange: #ff641a;
+  --jungle-color-logo-facebook: #3b5999;
+  --jungle-color-logo-google-blue: #4086f4;
+  --jungle-color-logo-google-green: #59c36a;
+  --jungle-color-logo-google-yellow: #ffda2d;
+  --jungle-color-logo-blue: #4175df;
+  --jungle-color-logo-light-blue: #03a9f4;
+  --jungle-color-logo-indigo: #283593;
+
+  /* Layout values measured from the desktop and mobile reference frames. */
+  --jungle-container-content: 75rem;
+  --jungle-spacing-page-mobile: 1.5rem;
+  --jungle-spacing-page-desktop: 7.5rem;
+  --jungle-spacing-page-top-mobile: 2.5rem;
+  --jungle-spacing-page-top-desktop: 1.5rem;
+  --jungle-spacing-section-mobile: 1rem;
+  --jungle-spacing-section-desktop: 6rem;
+  --jungle-spacing-catalog-gap: 3rem;
+  --jungle-width-catalog-sidebar: 19.375rem;
+
+  /* Inline effects measured from the reference frames. */
+  --jungle-shadow-overlay: 0 0 20px rgb(10 6 4 / 45%);
+  --jungle-shadow-overlay-mobile: 0 -10px 30px rgb(10 6 4 / 45%);
+
+  /* shadcn semantic contract */
+  --background: var(--jungle-color-ink);
+  --foreground: var(--jungle-color-foreground);
+  --card: var(--jungle-color-surface-card);
+  --card-foreground: var(--jungle-color-foreground);
+  --popover: var(--jungle-color-surface-raised);
+  --popover-foreground: var(--jungle-color-foreground);
+  --primary: var(--jungle-color-primary);
+  --primary-foreground: var(--jungle-color-ink);
+  --secondary: var(--jungle-color-secondary);
+  --secondary-foreground: var(--jungle-color-ink);
+  --muted: var(--jungle-color-surface-raised);
+  --muted-foreground: var(--jungle-color-text-muted);
+  --accent: var(--jungle-color-surface-dark);
+  --accent-foreground: var(--jungle-color-foreground);
+  --destructive: var(--jungle-color-error);
+  --destructive-foreground: var(--jungle-color-ink-deep);
+  --success: var(--jungle-color-success);
+  --success-foreground: var(--jungle-color-ink);
+  --warning: var(--jungle-color-amber);
+  --warning-foreground: var(--jungle-color-ink);
+  --border: var(--jungle-color-border);
+  --input: var(--jungle-color-border-soft);
+  --ring: var(--jungle-color-primary);
+
+  --chart-1: var(--jungle-color-primary);
+  --chart-2: var(--jungle-color-success);
+  --chart-3: var(--jungle-color-amber);
+  --chart-4: var(--jungle-color-text-coral);
+  --chart-5: var(--jungle-color-logo-blue);
+
+  --sidebar: var(--jungle-color-ink-soft);
+  --sidebar-foreground: var(--jungle-color-foreground);
+  --sidebar-primary: var(--jungle-color-primary);
+  --sidebar-primary-foreground: var(--jungle-color-ink);
+  --sidebar-accent: var(--jungle-color-surface-card);
+  --sidebar-accent-foreground: var(--jungle-color-foreground);
+  --sidebar-border: var(--jungle-color-border);
+  --sidebar-ring: var(--jungle-color-primary);
+
+  /* Base shadcn radius. The exposed Tailwind scale lives in theme.css. */
+  --radius: 0.5rem;
+}

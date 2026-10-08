@@ -1,0 +1,8 @@
+export { default as emeraldApeArtwork } from "./emerald-ape.webp"
+export { default as emeraldApeArtworkMobile } from "./emerald-ape-mobile.webp"
+export { default as goldenBeatArtwork } from "./golden-beat.webp"
+export { default as goldenBeatArtworkMobile } from "./golden-beat-mobile.webp"
+export { default as ivoryBaronArtwork } from "./ivory-baron.webp"
+export { default as ivoryBaronArtworkMobile } from "./ivory-baron-mobile.webp"
+export { default as sageNomadArtwork } from "./sage-nomad.webp"
+export { default as sageNomadArtworkMobile } from "./sage-nomad-mobile.webp"

@@ -1,0 +1,187 @@
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--jungle-font-family);
+  --font-mono: var(--jungle-font-family);
+  --font-heading: var(--jungle-font-family);
+
+  /* Semantic shadcn colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-hover: var(--jungle-color-primary-light);
+  --color-primary-active: var(--jungle-color-primary-dark);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-error-text: var(--jungle-color-error-text);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Brand primitives available as Tailwind utilities. */
+  --color-ink: var(--jungle-color-ink);
+  --color-ink-deep: var(--jungle-color-ink-deep);
+  --color-ink-soft: var(--jungle-color-ink-soft);
+  --color-surface-card: var(--jungle-color-surface-card);
+  --color-surface-raised: var(--jungle-color-surface-raised);
+  --color-surface-dark: var(--jungle-color-surface-dark);
+  --color-surface-elevated: var(--jungle-color-background-elevated);
+  --color-border-soft: var(--jungle-color-border-soft);
+  --color-text-primary: var(--jungle-color-text-primary);
+  --color-text-secondary: var(--jungle-color-text-secondary);
+  --color-text-muted: var(--jungle-color-text-muted);
+  --color-text-accent: var(--jungle-color-text-accent);
+  --color-text-coral: var(--jungle-color-text-coral);
+  --color-gray-light: var(--jungle-color-gray-light);
+  --color-brand-orange: var(--jungle-color-logo-orange);
+  --color-brand-facebook: var(--jungle-color-logo-facebook);
+  --color-brand-google-blue: var(--jungle-color-logo-google-blue);
+  --color-brand-google-green: var(--jungle-color-logo-google-green);
+  --color-brand-google-yellow: var(--jungle-color-logo-google-yellow);
+  --color-brand-blue: var(--jungle-color-logo-blue);
+  --color-brand-light-blue: var(--jungle-color-logo-light-blue);
+  --color-brand-indigo: var(--jungle-color-logo-indigo);
+
+  /* Reusable typography scale. */
+  --text-hero: 2.6875rem;
+  --text-hero--line-height: 4.375rem;
+  --text-hero--font-weight: 700;
+  --text-display: 2rem;
+  --text-display--line-height: 1.25;
+  --text-display--font-weight: 700;
+  --text-display--letter-spacing: 0.1em;
+  --text-heading-lg: 1.75rem;
+  --text-heading-lg--line-height: 1.3;
+  --text-heading-lg--font-weight: 700;
+  --text-heading: 1.5rem;
+  --text-heading--line-height: 2rem;
+  --text-heading--font-weight: 700;
+  --text-title: 1.25rem;
+  --text-title--line-height: 1.75rem;
+  --text-title--font-weight: 700;
+  --text-body-lg: 1.125rem;
+  --text-body-lg--line-height: 1.5rem;
+  --text-body: 1rem;
+  --text-body--line-height: 1.375rem;
+  --text-body-sm: 0.875rem;
+  --text-body-sm--line-height: 1.375rem;
+  --text-caption: 0.75rem;
+  --text-caption--line-height: 1rem;
+  --text-tiny: 0.625rem;
+  --text-tiny--line-height: 0.875rem;
+  --text-micro: 0.5625rem;
+  --text-micro--line-height: 1.25;
+  --text-micro--letter-spacing: 0.00625rem;
+
+  /* Product-specific font-size scale. */
+  --text-size-9: 0.5625rem;
+  --text-size-10: 0.625rem;
+  --text-size-11: 0.6875rem;
+  --text-size-12: 0.75rem;
+  --text-size-13: 0.8125rem;
+  --text-size-14: 0.875rem;
+  --text-size-15: 0.9375rem;
+  --text-size-16: 1rem;
+  --text-size-17: 1.0625rem;
+  --text-size-18: 1.125rem;
+  --text-size-19: 1.1875rem;
+  --text-size-20: 1.25rem;
+  --text-size-21: 1.3125rem;
+  --text-size-22: 1.375rem;
+  --text-size-23: 1.4375rem;
+  --text-size-24: 1.5rem;
+  --text-size-26: 1.625rem;
+  --text-size-28: 1.75rem;
+  --text-size-32: 2rem;
+  --text-size-43: 2.6875rem;
+
+  /* Product-specific fixed line-height scale. */
+  --leading-size-14: 0.875rem;
+  --leading-size-15: 0.9375rem;
+  --leading-size-16: 1rem;
+  --leading-size-18: 1.125rem;
+  --leading-size-20: 1.25rem;
+  --leading-size-22: 1.375rem;
+  --leading-size-24: 1.5rem;
+  --leading-size-25: 1.5625rem;
+  --leading-size-28: 1.75rem;
+  --leading-size-29: 1.8125rem;
+  --leading-size-30: 1.875rem;
+  --leading-size-32: 2rem;
+  --leading-size-40: 2.5rem;
+  --leading-size-45: 2.8125rem;
+  --leading-size-70: 4.375rem;
+
+  --radius-xs: 0.125rem;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: var(--radius);
+  --radius-xl: 0.625rem;
+  --radius-2xl: 0.75rem;
+  --radius-3xl: 1rem;
+  --radius-4xl: 1.25rem;
+  --radius-5xl: 1.5rem;
+  --radius-control: 0.3125rem;
+  --radius-shell: 2.5rem;
+  --radius-artwork: 0.9375rem;
+
+  --tracking-brand: 0.2rem;
+
+  --shadow-overlay: var(--jungle-shadow-overlay);
+  --shadow-overlay-mobile: var(--jungle-shadow-overlay-mobile);
+
+  --animate-skeleton-shimmer: skeleton-shimmer 1.6s ease-in-out infinite;
+
+  --container-content: var(--jungle-container-content);
+  --container-catalog-sidebar: var(--jungle-width-catalog-sidebar);
+  --spacing-page-mobile: var(--jungle-spacing-page-mobile);
+  --spacing-page-desktop: var(--jungle-spacing-page-desktop);
+  --spacing-page-top-mobile: var(--jungle-spacing-page-top-mobile);
+  --spacing-page-top-desktop: var(--jungle-spacing-page-top-desktop);
+  --spacing-section-mobile: var(--jungle-spacing-section-mobile);
+  --spacing-section-desktop: var(--jungle-spacing-section-desktop);
+  --spacing-catalog-gap: var(--jungle-spacing-catalog-gap);
+
+  /* Desktop layout breakpoint. */
+  --breakpoint-xl: 80rem;
+}
+
+@keyframes skeleton-shimmer {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}

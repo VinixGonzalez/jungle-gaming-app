@@ -1,0 +1,5 @@
+export { DesktopBlog } from "./components/desktop-blog"
+export { DesktopHero } from "./components/desktop-hero"
+export { DesktopPromos } from "./components/desktop-promos"
+export { MobileHero } from "./components/mobile-hero"
+export { useActiveHomeSection } from "./hooks/use-active-home-section"
