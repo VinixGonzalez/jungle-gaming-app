@@ -277,6 +277,19 @@ As rotas `/login` e `/register` são exclusivas para visitantes. Quando acessada
 por uma conta autenticada, redirecionam para o `returnTo` interno validado ou,
 na ausência dele, para `/`.
 
+### Cupons de demonstração
+
+Adicione ao menos um NFT ao carrinho antes de testar os cupons:
+
+| Código | Resultado esperado |
+| --- | --- |
+| `LAUNCH10` | Aplica 10% de desconto ao subtotal |
+| `EXPIRED10` | Retorna a mensagem de cupom expirado |
+| Qualquer outro código | Retorna a mensagem de cupom inválido |
+
+Os códigos não diferenciam letras maiúsculas e minúsculas. O cupom válido
+permanece no carrinho após refresh e pode ser removido pelo mesmo controle.
+
 ### Carrinho por identidade
 
 O estado persistido usa a chave `kurio_mock_cart_v2` e separa `guestCart` dos
